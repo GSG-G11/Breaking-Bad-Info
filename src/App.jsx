@@ -14,7 +14,9 @@ const App = () => {
     <Router>
     <Routes>
     <Route path='/' element={<Home />}/>
-    <Route path='/characters' element={<Characters data={data} setData={setData} isLoading={isLoading} setIsLoading={setIsLoading} />}/>
+    <Route path='/characters' element={<Characters data={data} setData={setData} isLoading={isLoading} setIsLoading={setIsLoading} />}>
+      {/* <Route path='/:id' /> */}
+      </Route>
     <Route path='/episodes' element={<Episodes data={data} setData={setData} isLoading={isLoading} setIsLoading={setIsLoading} />}/>
     </Routes>
     </Router>

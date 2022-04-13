@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import "./Episodes.css";
 
-const Episodes = ({data, setData, isLoading, setIsLoading}) => {
+const Episodes = ({ setData, setIsLoading}) => {
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +14,7 @@ const Episodes = ({data, setData, isLoading, setIsLoading}) => {
     }
     fetchData()
   }, [])
-
+  
   return <>
             <h1>Episodes</h1>
   </>;
