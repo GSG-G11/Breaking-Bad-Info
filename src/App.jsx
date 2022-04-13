@@ -1,24 +1,45 @@
-import React, { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Characters from './components/Characters/Characters';
-import Episodes from './components/Episodes/Episodes';
-import Home from './components/Home/Home';
+import CharCard from "./components/Characters/CharCard/CharCard";
+import Characters from "./components/Characters/Characters";
+import Episodes from "./components/Episodes/Episodes";
+import Home from "./components/Home/Home";
 
 const App = () => {
-  
-  const [data, setData] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
+  const [data, setData] = useState("");
+  const [episode, setEpisode] = useState("");
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        `https://www.breakingbadapi.com/api/characters`
+      );
+      setData(result.data);
+    };
+    fetchData();
+  }, []);
 
-  return <>
-    <Router>
-    <Routes>
-    <Route path='/' element={<Home />}/>
-    <Route path='/characters' element={<Characters data={data} setData={setData} isLoading={isLoading} setIsLoading={setIsLoading} />}/>
-    <Route path='/episodes' element={<Episodes data={data} setData={setData} isLoading={isLoading} setIsLoading={setIsLoading} />}/>
-    </Routes>
-    </Router>
-  </>;
-}
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(`https://www.breakingbadapi.com/api/episodes`);
+      setEpisode(result.data);
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/characters" element={<Characters char={data} />} />
+          <Route path="/characters/:id" element={<CharCard char={data} />} />
+          <Route path="/episodes" element={<Episodes episode={episode} />} />
+        </Routes>
+      </Router>
+    </>
+  );
+};
 
 export default App;
