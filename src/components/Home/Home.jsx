@@ -8,6 +8,7 @@ const Home = () => {
            <Link to='/characters'>characters</Link>
            <br></br>
             <Link to='/episodes'>episodes</Link>
+           
         </>
     );
 };

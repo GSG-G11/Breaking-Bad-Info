@@ -1,25 +1,17 @@
-import axios from 'axios';
-import React, {  useEffect } from 'react'
+
+import React, { useState, useEffect } from 'react'
+
 import Cards from './Cards/Cards';
 import "./Characters.css";
 
-const Characters = ({data}) => {
+const Characters = ({char}) => {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios (
-        `https://www.breakingbadapi.com/api/characters`
-      )
-       
-     console.log(result.data);
-    }
-    fetchData()
-  }, [])
 
-  return <>
+
+  return (<>
             <h1>Characters</h1>
-            <Cards result={data} />
-  </>;
+            <Cards result={char} />
+  </>);
 }
 
 export default Characters;
