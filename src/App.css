@@ -26,19 +26,11 @@ body {
   text-align: center;
   padding: 10px 15px;
   border: 0;
- text-decoration: none;
+  text-decoration: none;
 }
-.btn:hover{
-
+.btn:hover {
   background-color: #6eb68d;
-
 }
-
-
-
-
-
-
 
 .center {
   display: flex;
@@ -60,13 +52,6 @@ input[type="text"] {
   margin: auto;
   outline: none;
 }
-
-
-
-
-
-
-
 
 .louder-container {
   display: flex;
