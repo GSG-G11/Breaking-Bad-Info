@@ -5,7 +5,7 @@ import "./Episodes.css";
 const Episodes = ({episode}) => {
   
   return <>
-            <h1>Episodes</h1>
+            <h1 className='episode-title' >Episodes</h1>
             <EpisodeCards episode={episode}/>
   </>;
 }

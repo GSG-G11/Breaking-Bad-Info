@@ -5,7 +5,7 @@ import "./Characters.css";
 const Characters = ({char}) => {
 
   return (<>
-            <h1>Characters</h1>
+            <h1 className='page-title'>Characters</h1>
             <CharCards result={char} />
   </>);
 }
