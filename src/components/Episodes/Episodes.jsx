@@ -1,22 +1,12 @@
-import axios from 'axios';
-import React, {  useEffect } from 'react'
+import React from 'react'
+import EpisodeCards from './EpisodeCards/EpisodeCards';
 import "./Episodes.css";
 
-const Episodes = ({ setData, setIsLoading}) => {
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await axios (
-        `https://www.breakingbadapi.com/api/episodes`
-      )
-        setData(data.data)
-        setIsLoading(false)
-    }
-    fetchData()
-  }, [])
+const Episodes = ({episode}) => {
   
   return <>
             <h1>Episodes</h1>
+            <EpisodeCards episode={episode}/>
   </>;
 }
 

@@ -1,16 +1,12 @@
-
-import React, { useState, useEffect } from 'react'
-
-import Cards from './Cards/Cards';
+import React from 'react'
+import CharCards from './CharCards/CharCards';
 import "./Characters.css";
 
 const Characters = ({char}) => {
 
-
-
   return (<>
             <h1>Characters</h1>
-            <Cards result={char} />
+            <CharCards result={char} />
   </>);
 }
 
