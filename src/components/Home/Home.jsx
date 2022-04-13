@@ -18,14 +18,16 @@ const Home = () => {
                    <p>You want to know more?</p>
                    <div className='char-info'>
                         <img src={characters} alt="characters" />
+                        <p>Characters</p>
                         <p>This is the list of characters from Breaking Bad series which was shown on AMC</p>
-                     <Link to='/characters'>more</Link>
+                     <Link to='/characters' className='btn'>more</Link>
                    </div>
            <br></br>
            <div className='char-info'>
                         <img src={episodes} alt="episodes" />
+                        <p>Episodes</p>
                         <p>It contains 62 episodes divided into 5 seasons</p>
-                     <Link to='/episodes'>more</Link>
+                     <Link to='/episodes' className='btn'>more</Link>
                    </div>
            
         </>

@@ -22,7 +22,7 @@ const CharCard = ({ char }) => {
             );
           })
       ) : (
-        <div class="container">
+        <div class="louder-container">
         <div class="loader"></div>
       </div>
       )}

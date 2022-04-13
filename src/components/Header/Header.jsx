@@ -6,9 +6,9 @@ const Header = () => {
     return (
         <>
             <img src={logo} alt='logo' style={{width: '150px'}} />
-            <Link to='/'>Home </Link>
-            <Link to='/characters'>Characters </Link>
-            <Link to='/episodes'>Episodes</Link>
+            <Link to='/' className='btn'>Home </Link>
+            <Link to='/characters' className='btn'>Characters </Link>
+            <Link to='/episodes' className='btn'>Episodes</Link>
         </>
     );
 };
