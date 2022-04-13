@@ -6,6 +6,7 @@ import CharCard from "./components/Characters/CharCard/CharCard";
 import Characters from "./components/Characters/Characters";
 import Episodes from "./components/Episodes/Episodes";
 import Home from "./components/Home/Home";
+import Header from "./components/Header/Header";
 
 const App = () => {
   const [data, setData] = useState("");
@@ -31,6 +32,7 @@ const App = () => {
   return (
     <>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/characters" element={<Characters char={data} />} />
