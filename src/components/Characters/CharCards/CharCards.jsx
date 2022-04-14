@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../../../App.css';
+import './CharCards.css';
 
 const CharCards = (props) => {
   const { result } = props;
@@ -12,7 +13,10 @@ const CharCards = (props) => {
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        placeholder="...Search for character"
       />
+<div className="char-cards-container" >
+  
 
       {result.length ? (
         result
@@ -21,19 +25,20 @@ const CharCards = (props) => {
           )
           .map((item) => {
             return (
-              <div className="card" key={item.char_id}>
+              <div className="char-card" key={item.char_id}>
                 <Link to={`/characters/${item.char_id}`}>
                   <img src={item.img} alt={item.name} />
-                  <p className="name">{item.name}</p>
                 </Link>
+                  <p className="name">{item.name}</p>
               </div>
             );
           })
       ) : (
-         <div class="container">
+         <div class="louder-container">
          <div class="loader"></div>
        </div>
       )}
+      </div>
     </>
   );
 };

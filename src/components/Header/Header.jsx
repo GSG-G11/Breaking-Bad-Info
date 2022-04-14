@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.jpg'
-
+import './Header.css'
 const Header = () => {
     return (
         <>
-            <img src={logo} alt='logo' style={{width: '150px'}} />
-            <Link to='/'>Home </Link>
-            <Link to='/characters'>Characters </Link>
-            <Link to='/episodes'>Episodes</Link>
+        <div className='header-container'>
+        <Link to='/' >
+            <img src={logo} alt='logo'  />
+            </Link>
+            <div className='header-links'>
+            <Link to='/' className='btn'>Home </Link>
+            <Link to='/characters' className='btn'>Characters </Link>
+            <Link to='/episodes' className='btn'>Episodes</Link>
+            </div>
+            </div>
         </>
     );
 };
